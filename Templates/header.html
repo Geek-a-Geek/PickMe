@@ -1,0 +1,16 @@
+{%load static%}
+<header>
+  <h1><a href="/home/">PickMe</a></h1>
+  <nav>
+    <ul>
+      <li><a href="/about/">About Us</a></li>
+      <li><a href="/booking/">Book Ride</a></li>
+      <li><a href="/myRides/">My Rides</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/registration/">Account</a></li>
+      {%if user.is_authenticated%}
+      <li><a href="/logout/">Logout</a></li>
+      {%endif%}
+    </ul>
+  </nav>
+</header>

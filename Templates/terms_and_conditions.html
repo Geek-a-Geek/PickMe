@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Terms and Conditions - PickMe</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/7.jpg");
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 20px;
+        color: chartreuse;
+      }
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(49, 42, 42, 0.822);
+        border-radius: 15px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      a {
+        color: white;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "header.html" %}
+
+    <div class="container">
+      <h1>Terms and Conditions</h1>
+      <p>
+        Welcome to PickMe! Before you proceed, please read and understand the
+        following terms and conditions:
+      </p>
+
+      <h2>1. User Agreement</h2>
+      <p>
+        By using our Cab Booking App, you agree to abide by our terms and
+        conditions and our <a href="privacy.html">Privacy Policy</a>.
+      </p>
+
+      <h2>2. Booking and Payments</h2>
+      <ul>
+        <li>
+          We provide a platform for booking rides. The availability of rides is
+          subject to the availability of drivers, you can also book ride without
+          driver if you know to drive.
+        </li>
+        <li>
+          Payments for rides will be processed through the payment method you
+          provide during booking.
+        </li>
+        <li>We reserve the right to modify the pricing and payment methods.</li>
+      </ul>
+
+      <h2>3. User Responsibilities</h2>
+      <ul>
+        <li>You must provide accurate and complete information for booking.</li>
+        <li>
+          You are responsible for your behavior during the ride and must treat
+          drivers and fellow passengers with respect.
+        </li>
+        <li>Any damage caused to the vehicle will be your responsibility.</li>
+        <li>
+          If you are driving our any vehicle, any Chalan caused by breaking
+          Traffic Rules then it is your responsibility to give the payment of
+          that perticular chalan.
+        </li>
+      </ul>
+
+      <h2>4. Cancellation and Refunds</h2>
+      <ul>
+        <li>
+          Cancellation policies vary based on the type of booking. Please review
+          our cancellation policy on our app.
+        </li>
+        <li>
+          Refunds, if applicable, will be processed in accordance with our
+          refund policy.
+        </li>
+      </ul>
+
+      <h2>5. Disclaimers</h2>
+      <p>
+        We are not liable for any delays, accidents, or losses that occur during
+        the ride. Use the app at your own risk.
+      </p>
+
+      <h2>6. Changes to Terms</h2>
+      <p>
+        We reserve the right to modify these terms and conditions at any time.
+        Any changes will be effective immediately upon posting.
+      </p>
+
+      <p>
+        If you have any questions about our terms and conditions, please
+        <a href="/contact-us/">contact us</a>.
+      </p>
+      <p></p>
+      <br />
+      <br />
+    </div>
+  </body>
+  {% include "footer.html" %}
+</html>

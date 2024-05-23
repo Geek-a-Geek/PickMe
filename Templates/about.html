@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to PickMe</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/9.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+      p a {
+        color: red;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      p,
+      h2,
+      li {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "header.html" %}
+
+    <div class="container">
+      <h2>Welcome to PickMe!</h2>
+      <p>
+        Book a ride with PickMe and experience convenient, safe, and reliable
+        transportation services.
+      </p>
+
+      <h2>About Us</h2>
+      <p>
+        We are a team of passionate individuals, dedicated to give an amazing
+        ride to our 'Riders' and 'Passengers' to all over India.
+      </p>
+
+      <h2>Why Choose PickMe?</h2>
+      <ul>
+        <li>Fast and Efficient Service</li>
+        <li>Experienced and Professional Drivers</li>
+        <li>Wide Range of Vehicle Options</li>
+        <li>Transparent Pricing</li>
+      </ul>
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions or inquiries, feel free to
+        <a href="contact.html">contact us</a>.
+      </p>
+    </div>
+  </body>
+  {% include "footer.html" %}
+</html>

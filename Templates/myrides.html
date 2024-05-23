@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ride Booking Services</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120vh;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 15px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      a {
+        color: white;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      #log_prompt {
+        background: rgba(49, 42, 42, 0.822);
+        padding: 15px;
+        border-radius: 15px;
+        border: 1px;
+        border-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "header.html" %} {% if user.is_authenticated %}
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Pickup Location</th>
+          <th>Drop Location</th>
+          <th>Vehicle Class</th>
+          <th>Booked By</th>
+          <th>Vehicle registration number</th>
+          <th>Time of Booking</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for n in user_rides %}
+        <tr>
+          <td>{{n.id}}</td>
+          <td>{{n.pick_loc}}</td>
+          <td>{{n.drop_loc}}</td>
+          <td>{{n.vehicle_class}}</td>
+          <td>{{n.booked_by}}</td>
+          <td>{{n.car}}</td>
+          <td>{{n.time}}</td>
+        </tr>
+        {% endfor %}
+
+        <!-- Add more rows for additional services -->
+      </tbody>
+    </table>
+    {%else%}
+    <h1 id="log_prompt">!!!Please login to view your rides!!!</h1>
+    {% endif %}
+  </body>
+  {% include "footer.html" %}
+</html>

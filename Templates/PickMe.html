@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles.css" />
+
+    <title>PickMe</title>
+    <style>
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+      body {
+        background: url("../static/3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "header.html" %}
+    <main>
+      <!-- Content will be dynamically loaded here -->
+    </main>
+    <footer>&copy; PickMe. <a href="/t&c/">Terms and Conditions</a></footer>
+  </body>
+</html>

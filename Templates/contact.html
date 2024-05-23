@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us - PickMe</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: black;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+      .container {
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-top: 20px;
+      }
+      .contact-info p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "header.html" %}
+
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-info">
+        <p>
+          If you have any questions or need assistance, don't hesitate to
+          contact us:
+        </p>
+        <p><strong>Email:</strong> pickme@gmail.com</p>
+        <p><strong>Phone:</strong> +91 9572690354</p>
+      </div>
+      <br />
+
+      <h2>Visit Our Office</h2>
+      <p><strong>Address:</strong> Bhabua, Bihar, India</p>
+
+      <br />
+      <h2>Business Hours</h2>
+      <p>Monday - Friday: 09:00 AM - 06:00 PM</p>
+      <p>Saturday: 10:00 AM - 04:00 PM</p>
+      <p>Sunday: 12:00 PM - 02:00 PM</p>
+    </div>
+  </body>
+  {% include "footer.html" %}
+</html>

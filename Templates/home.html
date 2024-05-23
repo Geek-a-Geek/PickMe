@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      a {
+        color: white;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .msg {
+        background: rgba(49, 42, 42, 0.822);
+        padding: 15px;
+        border-radius: 15px;
+        border: 1px;
+        border-color: black;
+        color: white;
+      }
+    </style>
+
+    <title>PickMe</title>
+  </head>
+  <body>
+    {% include "header.html" %}
+    <main>
+      <!-- Content will be dynamically loaded here -->
+
+      {% if user.is_authenticated %}
+      <h1 class="msg">Welcome, {{ user.username }}!</h1>
+      <h3 class="msg">{{msg}}</h3>
+      {% else %}
+      <h1 class="msg">Welcome, User!!<h1>
+      {% endif %}
+    </main>
+  </body>
+  {% include "footer.html" %}
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ride Booking</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 20px;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+      }
+
+      .log_prompt {
+        background: rgba(49, 42, 42, 0.822);
+        padding: 15px;
+        border-radius: 15px;
+        border: 1px;
+        border-color: black;
+        color: white;
+      }
+
+      label,
+      input,
+      select,
+      button {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      button {
+        background: #3498db;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .heading {
+        font-family: "Black Ops One", "cursive";
+        font-weight: bold;
+        color: white;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      a {
+        color: white;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      ul {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "header.html" %} {% if user.is_authenticated%}
+    <form id="ride-form" method="post">
+      {% csrf_token %}
+
+      <label for="pickup">Pickup Location</label>
+      <input
+        type="text"
+        id="pickup"
+        placeholder="Enter pickup location"
+        name="pick_loc"
+        required />
+
+      <label for="dropoff">Drop-off Location</label>
+      <input
+        type="text"
+        id="dropoff"
+        placeholder="Enter drop-off location"
+        name="drop_loc"
+        required />
+
+      <label for="ride-type">Select Ride Type</label>
+      <select id="ride-type" name="rtype">
+        <option value="-" selected>--------</option>
+        <option value="Standard">Standard</option>
+        <option value="Premium">Premium</option>
+      </select>
+      <label for="Vehicle">Select Vehicle</label>
+      <select id="Vehicle" name="vtype">
+        <option value="-" selected>--------</option>
+        <option value="Car">Car</option>
+        <option value="Bike">Bike</option>
+      </select>
+
+      <button type="submit">Request Ride</button>
+    </form>
+    <h3 class="log_prompt">{{msg}}</h3>
+    {%else%}
+    <h1 class="log_prompt">Please login to Book rides</h1>
+    {%endif%}
+  </body>
+  {% include "footer.html" %}
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign In Page</title>
+    <style>
+      body {
+        font-family: "Black Ops One", "cursive";
+        background: url("../static/3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f39c12;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      .input-group {
+        margin-bottom: 10px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #f3f0f0;
+        border-radius: 3px;
+      }
+      .input-group button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .login-link {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .login-link a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "header.html" %}
+
+    <div class="container" method="POST">
+      {% csrf_token %}
+      <h2>Sign In</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="input-group">
+          <button type="submit">Sign In</button>
+        </div>
+      </form>
+      {{msg}}
+      <div class="login-link">
+        Don't have an account? <a href="/registration/">Sign Up</a>
+      </div>
+    </div>
+  </body>
+  {% include "footer.html" %}
+</html>
